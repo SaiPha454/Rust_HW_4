@@ -48,7 +48,7 @@ mod tests {
     use crate::make_grades_recursion;
 
     #[test]
-    fn test_make_recursion_grades() {
+    fn test_make_grades_recursion() {
         let test_list = vec![-10,10,50,65,75,92,100,110];
         let mut index : usize = 0;
         let mut grade_list: Vec<&str> = vec![];

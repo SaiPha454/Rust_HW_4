@@ -1,7 +1,7 @@
 
 fn main() {
 
-    let star = 1; //change as you like
+    let star = 3; //change as you like
 
     let mut  arrow = String::new();
     let mut index = 0;
@@ -35,10 +35,9 @@ fn make_arrow1(star_num : i32, index : &mut i32, arrow : &mut String) {
 fn generate_star(star_num : i32, index : &mut i32, arrow : &mut String) {
     
     *index += 1;
-    arrow.push_str("*");
     
-    if *index < star_num {
- 
+    if *index <= star_num {
+        arrow.push_str("*");
          generate_star(star_num, index, arrow);
     }
 }
@@ -46,10 +45,10 @@ fn generate_star(star_num : i32, index : &mut i32, arrow : &mut String) {
 
 #[cfg(test)]
 mod tests {
-    use crate::make_arrow1;
+    use crate::{make_arrow1, generate_star};
 
     #[test]
-    fn test_make_arrow1_3() {
+    fn test_make_arrow1_recur_3() {
         
         let star = 3;
         let mut  arrow = String::new();
@@ -62,7 +61,7 @@ mod tests {
     }
 
     #[test]
-    fn test_make_arrow1_1() {
+    fn test_make_arrow1_recur_1() {
         
         let star = 1;
         let mut  arrow = String::new();
@@ -70,6 +69,32 @@ mod tests {
 
         let expected = "*\n";
         make_arrow1(star, &mut index, &mut arrow);
+
+        assert_eq!(expected, arrow);
+    }
+
+    #[test]
+    fn test_make_arrow1_generate_star_0() {
+        
+        let star_num = 0;
+        let mut  arrow = String::new();
+        let mut index = 0;
+        let expected = "";
+
+        generate_star(star_num, &mut index, &mut arrow);
+
+        assert_eq!(expected, arrow);
+    }
+
+    #[test]
+    fn test_make_arrow1_generate_star_2() {
+        
+        let star_num = 2;
+        let mut  arrow = String::new();
+        let mut index = 0;
+        let expected = "**";
+
+        generate_star(star_num, &mut index, &mut arrow);
 
         assert_eq!(expected, arrow);
     }

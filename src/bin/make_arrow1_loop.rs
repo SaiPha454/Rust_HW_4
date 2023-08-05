@@ -31,7 +31,7 @@ mod tests {
     use crate::make_arrow1;
 
     #[test]
-    fn test_make_arrow1_3() {
+    fn test_make_arrow1_loo_3() {
         
         let star = 3;
         let expected = "*\n**\n***\n**\n*\n";
@@ -41,7 +41,7 @@ mod tests {
     }
 
     #[test]
-    fn test_make_arrow1_1() {
+    fn test_make_arrow1_loop_1() {
         
         let star = 1;
         let expected = "*\n";
