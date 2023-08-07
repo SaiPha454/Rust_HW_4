@@ -42,7 +42,7 @@ mod tests {
     use crate::make_grades;
 
     #[test]
-    fn test_make_loop_grades() {
+    fn test_make_grades_loop() {
         let test_list = vec![-10,10,50,65,75,92,100,110];
         let expected_list = vec![
             "Invalid score",
