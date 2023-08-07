@@ -5,7 +5,8 @@ fn main() {
 
     make_grades_recursion(& given_score_list, &mut index, &mut grade_list);
 
-    println!("{:?}", grade_list);
+    println!("Score List : {:?}", given_score_list);
+    println!("Grade List : {:?}", grade_list);
 }
 
 fn make_grades_recursion(score_list : &Vec<i32>, index: &mut usize,grade_list: &mut Vec<&str>) {

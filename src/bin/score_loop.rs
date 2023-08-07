@@ -1,10 +1,11 @@
 
 fn main() {
-    let given_score_list = vec![10,0,100,50];
+    let given_score_list = vec![10,0,100,50,-110,-5];
 
     let grades = make_grades(&given_score_list);
 
-    println!("{:?}", grades);
+    println!("Score List : {:?}", given_score_list);
+    println!("Grade List : {:?}", grades);
 
 }
 
